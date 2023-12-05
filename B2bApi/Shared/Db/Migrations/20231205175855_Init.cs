@@ -176,7 +176,7 @@ namespace B2bApi.Shared.Db.Migrations
                         column: x => x.order_id,
                         principalTable: "orders",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.SetNull);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_carts_users_user_id",
                         column: x => x.user_id,
