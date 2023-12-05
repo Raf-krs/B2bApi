@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B2bApi", "B2bApi\B2bApi.csproj", "{1E0A722D-0656-4473-B766-1D4DC81349EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B2bApiTests", "B2bApiTests\B2bApiTests.csproj", "{9525AD70-F286-4764-BD86-2C9415E2528A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E0A722D-0656-4473-B766-1D4DC81349EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E0A722D-0656-4473-B766-1D4DC81349EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E0A722D-0656-4473-B766-1D4DC81349EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E0A722D-0656-4473-B766-1D4DC81349EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9525AD70-F286-4764-BD86-2C9415E2528A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9525AD70-F286-4764-BD86-2C9415E2528A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9525AD70-F286-4764-BD86-2C9415E2528A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9525AD70-F286-4764-BD86-2C9415E2528A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

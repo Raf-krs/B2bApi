@@ -1,0 +1,6 @@
+﻿services:
+  b2bapi:
+    image: b2bapi
+    build:
+      context: .
+      dockerfile: B2bApi/Dockerfile
