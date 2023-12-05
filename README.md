@@ -2,11 +2,31 @@
 
 ## B2B API
 
-B2bApi is a modular monolith created in ASP.NET WebAPI. The project is related to the 2-day coding challenge. 
+B2bApi is a modular monolith created in ASP.NET WebAPI. The project is related to the 2-day coding challenge.
 The purpose of the project was to assess the performance of combining Ef Core + Dapper in a single monolith.
 It is just a demo and does not include all functionalities. This project leverages modern
 tools and technologies to ensure performance, scalability, and ease of maintenance.
 Architectural decisions can be found in the [Architecture Decision Record](Architecture-decisions).
+
+### Used technologies
+
+- ASP.NET WebAPI
+- Entity Framework Core
+- Dapper
+- MediatR
+- Quartz.NET
+- Scrutor
+- Serilog
+- JWT Tokens
+- Swagger
+- ReDoc
+- Bogus
+- Shouldly
+- NSubstitute
+- Testcontainers
+- xUnit
+- Docker
+- NetArchTest
 
 ### Prerequisites
 
@@ -16,26 +36,29 @@ Architectural decisions can be found in the [Architecture Decision Record](Archi
 ### Installation
 
 #### Step 1 - Clone the repository
+
 ```bash
 git clone https://github.com/twoje-repo/B2bApi.git
 cd B2bApi
 ```
 
 #### Step 2 - Run docker-compose
-For the development environment (by default), a Docker Compose configuration has been prepared. 
+
+For the development environment (by default), a Docker Compose configuration has been prepared.
 To set up the environment (database and logging), use the following command:
 
 ```bash
 docker-compose up
 ```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Project description
 
 **1. Registration + Login with JWT Tokens**
 
-The B2B portal enables users to register and log in to the system. The authentication process is based 
-on JWT (JSON Web Token), providing a secure means of communication between the client and the server. 
+The B2B portal enables users to register and log in to the system. The authentication process is based
+on JWT (JSON Web Token), providing a secure means of communication between the client and the server.
 Registered users receive unique tokens that are subsequently used for authorizing access to protected resources.
 
 _Check [code](Shared/Security) for details_
@@ -45,21 +68,21 @@ _Check [code](Shared/Security) for details_
 **2.1 Product List for All Users**
 
 The portal provides a feature to browse the list of products available in the offer. Each user can view the available products.
-Response is paginated and sorted by id (default). Price is converted to the currency of the user's choice. 
+Response is paginated and sorted by id (default). Price is converted to the currency of the user's choice.
 
 **2.2 Adding Products**
 
-Administrators have the authority to add new products to the database. This process is restricted to the administrator 
+Administrators have the authority to add new products to the database. This process is restricted to the administrator
 role to ensure controlled management of the product assortment.
 
 ### 3. Loyalty Points Calculation
 
-After making a purchase, the system calculates loyalty points for registered users. This scoring can later be used 
+After making a purchase, the system calculates loyalty points for registered users. This scoring can later be used
 within the loyalty program to obtain various benefits.
 
 ### 4. Retrieving Current Currency Exchange Rates
 
-The portal periodically updates currency exchange rates by fetching them from an external source, such as the NBP API. 
+The portal periodically updates currency exchange rates by fetching them from an external source, such as the NBP API.
 The current rates are utilized within the system to convert product prices into various currencies.
 
 _Check [code](ExchangeRates/Jobs) for details_
