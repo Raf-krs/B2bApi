@@ -2,7 +2,7 @@
 
 public class PagedResponse<T>
 {
-	public IEnumerable<T> Items { get; set; }
-	public int TotalCount { get; set; }
-	public bool HasNextPage { get; set; }
+	public IEnumerable<T> Items { get; init; }
+	public int TotalCount { get; init; }
+	public bool HasNextPage { get; init; }
 }

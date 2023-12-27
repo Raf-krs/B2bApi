@@ -6,7 +6,7 @@ B2bApi is a modular monolith created in ASP.NET WebAPI. The project is related t
 The purpose of the project was to assess the performance of combining Ef Core + Dapper in a single monolith.
 It is just a demo and does not include all functionalities. This project leverages modern
 tools and technologies to ensure performance, scalability, and ease of maintenance.
-Architectural decisions can be found in the [Architecture Decision Record](Architecture-decisions).
+Architectural decisions can be found in the B2bApi/Architecture-decisions catalog.
 
 ### Used technologies
 
@@ -35,20 +35,42 @@ Architectural decisions can be found in the [Architecture Decision Record](Archi
 
 ### Installation
 
-#### Step 1 - Clone the repository
+#### Clone the repository
 
 ```bash
-git clone https://github.com/twoje-repo/B2bApi.git
+git clone https://github.com/Raf-krs/B2bApi.git
 cd B2bApi
 ```
 
-#### Step 2 - Run docker-compose
+#### Run docker-compose
 
 For the development environment (by default), a Docker Compose configuration has been prepared.
 To set up the environment (database and logging), use the following command:
 
 ```bash
-docker-compose up
+docker-compose up -d
+```
+
+#### Running the application
+
+To run the application, use the following command:
+
+```shell
+cd B2bApi
+dotnet run
+```
+
+#### API documentation
+
+After running the application, the API documentation is available at [ReDoc](https://localhost:5058/api-docs/index.html).
+
+#### Testing
+
+The project contains unit tests and integration tests. To run the tests, use the following command:
+
+```shell
+cd B2bApiTests
+dotnet test
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -61,7 +83,7 @@ The B2B portal enables users to register and log in to the system. The authentic
 on JWT (JSON Web Token), providing a secure means of communication between the client and the server.
 Registered users receive unique tokens that are subsequently used for authorizing access to protected resources.
 
-_Check [code](Shared/Security) for details_
+_Check B2bApi/Shared/Security for details_
 
 ### 2. Product Management
 
@@ -85,7 +107,7 @@ within the loyalty program to obtain various benefits.
 The portal periodically updates currency exchange rates by fetching them from an external source, such as the NBP API.
 The current rates are utilized within the system to convert product prices into various currencies.
 
-_Check [code](ExchangeRates/Jobs) for details_
+_Check B2bApi/ExchangeRates/Jobs for details_
 
 ### 5. Adding Product Discounts
 
@@ -101,18 +123,6 @@ Users, after logging in, can add products to the shopping cart. The cart allows 
 calculate costs, and move through the stages of the ordering process.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## API documentation
-
-After running the application, the API documentation is available at [ReDoc](https://localhost:5058/api-docs/index.html).
-
-## Testing
-
-The project contains unit tests and integration tests. To run the tests, use the following command:
-
-```bash
-dotnet test
-```
 
 ## License
 

@@ -36,5 +36,5 @@ Potential negative consequences:
 ## Links
 
 - [MediatR](https://github.com/jbogard/MediatR)
-- [Wzorzec CQRS](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)
-- [Wzorzec Unit of Work](https://martinfowler.com/eaaCatalog/unitOfWork.html)
+- [CQRS Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)
+- [Unit of Work Pattern](https://martinfowler.com/eaaCatalog/unitOfWork.html)

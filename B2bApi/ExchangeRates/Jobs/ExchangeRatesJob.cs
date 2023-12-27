@@ -21,7 +21,6 @@ public class ExchangeRatesJob : IJob
 
 	public async Task Execute(IJobExecutionContext context)
 	{
-		// TODO -> check currency code when is saved in database
 		_logger.LogInformation("Execute job: {JobName}", JobName);
 		
 		var response = await _nbpApi.GetExchangeRatesAsync();

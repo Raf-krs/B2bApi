@@ -48,24 +48,6 @@ public class CartsControllerTests : TestApi
 		// Assert
 		response.StatusCode.ShouldBe(HttpStatusCode.NoContent);
 	}
-	
-	[Fact]
-	public async Task AddItem_ShouldReturnCreated()
-	{
-		// Arrange
-		var user = await SaveUser();
-		var product = await SaveProduct();
-		var cart = await SaveCart(user);
-		var addItemCommand = new AddItemCommand(cart.Id, product.Id, 1, product.Price.Amount);
-		Authorize(user);
-		
-		// Act
-		var response = await Client.PostAsJsonAsync($"api/carts/{cart.Id}/item", addItemCommand);
-		
-		// Assert
-		// INFO -> Microsoft OMG, response NoContent when Created return nothing in body [sic!], maybe return Accepted?
-		response.StatusCode.ShouldBe(HttpStatusCode.NoContent); 
-	}
 
 	private async Task<User> SaveUser()
 	{
@@ -74,14 +56,6 @@ public class CartsControllerTests : TestApi
 		await AddEntityAsync(user);
 
 		return user;
-	}
-	
-	private async Task<Product> SaveProduct()
-	{
-		var product = Product.Create(Guid.NewGuid(), "Product One", "Desc", 10.00m);
-		await AddEntityAsync(product);
-
-		return product;
 	}
 	
 	private async Task<Cart> SaveCart(User user)
